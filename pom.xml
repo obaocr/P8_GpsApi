@@ -15,7 +15,7 @@
     <artifactId>P8_GpsApi</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>p8_gps</name>
-    <description>p8_gps</description>
+    <description>p8_gps standalone</description>
 
     <properties>
         <java.version>1.8</java.version>
