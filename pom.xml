@@ -77,10 +77,28 @@
 
     </dependencies>
 
-
     <build>
 
         <plugins>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.5.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>spring-boot</classifier>
+                            <mainClass>
+                                P8.Gps.P8_GpsApi.GpsApplication
+                            </mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
             <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
             <plugin>
