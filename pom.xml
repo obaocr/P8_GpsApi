@@ -11,8 +11,8 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>P8.Gps</groupId>
-    <artifactId>P8_GpsApi</artifactId>
+    <groupId>com.p8.gpsUtil</groupId>
+    <artifactId>gpsApi</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>p8_gps</name>
     <description>p8_gps standalone</description>
@@ -20,6 +20,13 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>localrepository</id>
+            <url>file://${basedir}/libs</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
@@ -49,29 +56,29 @@
             <version>0.9.19</version>
         </dependency>
 
-        <dependency>
+        <!--dependency>
             <groupId>com.p8.gpsUtil</groupId>
             <artifactId>gpsUtil</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${basedir}/libs/gpsUtil.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
+            <systemPath>${pom.basedir}/libs/gpsUtil.jar</systemPath>
+        </dependency-->
 
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
             <version>0.8.5</version>
             <type>maven-plugin</type>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
         </dependency>
 
 
@@ -87,18 +94,32 @@
                 <version>2.2.5.RELEASE</version>
                 <executions>
                     <execution>
+                        <id>repackage</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!--plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
                         <goals>
                             <goal>repackage</goal>
                         </goals>
                         <configuration>
                             <classifier>spring-boot</classifier>
                             <mainClass>
-                                P8.Gps.P8_GpsApi.GpsApplication
+                                com.p8.gpsUtil.GpsApplication
                             </mainClass>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+            </plugin-->
 
             <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-site-plugin -->
             <plugin>

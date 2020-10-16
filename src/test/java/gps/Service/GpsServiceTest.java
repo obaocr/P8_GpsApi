@@ -2,8 +2,6 @@ package gps.Service;
 
 import gps.Model.AttractionMapper;
 import gps.Model.VisitedLocationMapper;
-import gpsUtil.location.Attraction;
-import gpsUtil.location.VisitedLocation;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

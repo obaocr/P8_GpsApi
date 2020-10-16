@@ -1,12 +1,9 @@
 package gps.Controller;
 
-import com.jsoniter.output.JsonStream;
 import gps.Model.AttractionMapper;
 import gps.Model.VisitedLocationMapper;
 import gps.Service.GpsService;
 import gps.Utils.EntityIllegalArgumentException;
-import gpsUtil.location.Attraction;
-import gpsUtil.location.VisitedLocation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +28,7 @@ public class GpsController {
     @GetMapping("/")
     public String gpsHome() {
         logger.debug("gpsHome");
-        return  "P8 gpsHome";
+        return "P8 gpsHome";
     }
 
     @GetMapping("/gpsattractions")
