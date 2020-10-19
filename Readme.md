@@ -1,6 +1,12 @@
 # P8 GpsApi
 GpsApi is a Spring Boot application which expose web services for the Tourguide application
-Service : Get Attraction & User location  
+Service : Get Attraction & User location
+
+The services are exposed by port 8046
+
+Endpoints : 
+"/gpsattractions"
+"/gpsuserlocation" 
 
 ## Getting Started
 
@@ -31,9 +37,21 @@ https://spring.io
 
 4. Installing this application in a Docker container, Ex : https://hub.docker.com/editions/community/docker-ce-desktop-windows 
 
-### Documentation : Architecture GpsApi
+### Run the application in a Docker container
 
-![UML diagram](/TourGuide/img/GpsApi.JPG)
+1. Install Docker, launch Docker application
+
+2. Build the application
+From the P8_GpsApi directory launch "mvn clean package", the jar is in the target directory
+
+3. Build and run the docker image
+From the P8_GpsApi :
+    "docker build --tag gpsapi ." tu build the image
+    "docker run -p 8046:8046 gpsapi" to run
+    "docker stop gpsapi ." to stop
+    "docker rmi -f gpsapi" to remove the image
+      
+4. Test the service ( Ex : http://localhost:8046/attractions)
 
 
 ### Testing
