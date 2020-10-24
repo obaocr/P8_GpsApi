@@ -34,8 +34,6 @@ public class GpsController {
     @GetMapping("/gpsattractions")
     public List<AttractionMapper> gpsGetAttractions() {
         logger.debug("GpsApi gpsGetAttractions");
-        //List<Attraction> attractions = gpsService.getAttractions();
-        //return JsonStream.serialize(gpsService.getAttractions());
         return gpsService.getAttractions();
     }
 
